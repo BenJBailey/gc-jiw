@@ -16,14 +16,6 @@ testProgressInput.addEventListener("input", function () {
   const clampedValue = Math.min(100, Math.max(0, progressValue));
   progressBox.style.setProperty("--progress", `${clampedValue}%`);
 });
-
-// Create 250,000 divs in the progress box
-for (let i = 0; i < 250; i++) {
-  const div = document.createElement("div");
-  div.classList.add("block");
-  progressBox.appendChild(div);
-}
-
 sqFeetInput.addEventListener("input", function () {
   const sqFeet = Number.parseInt(sqFeetInput.value, 10) || 0;
   const donationAmount = sqFeet * costPerSqFt;

@@ -5,11 +5,40 @@
   border: solid 1px black;
 }
 
-#progress-display {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 1px;
-  width: 110px;
+#tracking-container {
+  display: flex;
+}
+
+#progress {
+  background-color: #f5f5f5;
+  width: 200px;
+  height: 500px;
+  margin-left: 100px;
+  position: relative;
+  .progress-line {
+    width: 100%;
+    border-top: solid 1px #575757;
+  }
+  .progress-100 {
+    position: absolute;
+    top: 0px;
+    height: 60%;
+  }
+  .progress-40 {
+    position: absolute;
+    top: 60%;
+    height: 6%;
+  }
+  .progress-33 {
+    position: absolute;
+    top: 66%;
+    height: 24%;
+  }
+  .progress-10 {
+    position: absolute;
+    top: 90%;
+    height: 10%;
+  }
 }
 
 .jiw-header {
