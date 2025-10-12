@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div class="jiw-header">
+    <h1>Jesus Is Worthy</h1>
+    <img src="/images/gc-logo.png" alt="Grace Church Logo" />
+  </div>
+  <main class="container-fluid">
+    <div id="tracking-goal">
+      <h2>$500,000</h2>
+      <h3>of $5,000,000</h3>
+    </div>
+    <div id="progress">
+      <div id="progress-display"">
+        <!-- Using JavaScript to create boxes would be more efficient -->
+      </div>
+    </div>
+    <form id=" donation-form">
+        <fieldset>
+          <label>
+            Number of Square Feet ($250 per square foot)
+            <input name="sq_feet" id="sq_feet" placeholder="" type="number" min="1" placeholder="1" value="1"
+              step="1" />
+          </label>
+
+        </fieldset>
+        <article>You'll be donating <span id="donation-amount">$250</span> for <span id="donation-count">1 square
+            foot</span>.</article>
+        <input type="submit" value="Donate" />
+
+        <h2>Test UI</h2>
+        <input type="number" id="test-progress" min="0" max="100" step="1" value="0" />
+        <label for="test-progress">Set Progress %</label>
+        </form>
+        <sub>Photo by <a
+            href="https://unsplash.com/@seandavis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sean
+            Davis</a> on <a
+            href="https://unsplash.com/photos/an-aerial-view-of-a-city-with-a-river-running-through-it-LBDrqE91vHw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></sub>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
