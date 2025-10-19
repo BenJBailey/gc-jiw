@@ -13,6 +13,7 @@
     "vite": "^7.1.6"
   },
   "dependencies": {
-    "@picocss/pico": "^2.1.1"
+    "@picocss/pico": "^2.1.1",
+    "@vitejs/plugin-basic-ssl": "^2.1.0"
   }
 }

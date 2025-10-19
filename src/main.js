@@ -1,38 +1,45 @@
+import { getProgress } from "./api/getProgress";
 import "./style.scss";
 
-const donationForm = document.getElementById("donation-form");
+// Currency formatter using browser API
+const currencyFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
 
-const costPerSqFt = 250.0;
-
-// watch for sq_ft input changes and update donation amount
-const sqFeetInput = document.getElementById("sq_feet");
-const donationCount = document.getElementById("donation-count");
-const donationAmountDisplay = document.getElementById("donation-amount");
-const progressBox = document.getElementById("progress-display");
+const progressBox = document.getElementById("progress-completed");
 const testProgressInput = document.getElementById("test-progress");
 
-testProgressInput.addEventListener("input", function () {
-  const progressValue = Number.parseInt(testProgressInput.value, 10) || 0;
-  const clampedValue = Math.min(100, Math.max(0, progressValue));
-  progressBox.style.setProperty("--progress", `${clampedValue}%`);
-});
-sqFeetInput.addEventListener("input", function () {
-  const sqFeet = Number.parseInt(sqFeetInput.value, 10) || 0;
-  const donationAmount = sqFeet * costPerSqFt;
-  donationCount.textContent = `${sqFeetInput.value} square ${
-    sqFeet === 1 ? "foot" : "feet"
-  }`;
-  donationAmountDisplay.textContent = `$${donationAmount.toFixed(2)}`;
-});
-donationForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+const updateProgressOnPage = ({ goal, raised }) => {
+  const trackingTotal = document.getElementById("tracking-progress");
+  const trackingGoal = document.getElementById("tracking-total");
+  if (trackingTotal) {
+    trackingTotal.innerText = currencyFormatter.format(raised / 100);
+  }
+  if (trackingGoal) {
+    trackingGoal.innerText = currencyFormatter.format(goal / 100);
+  }
+  progressBox.style.setProperty("height", `${(raised / goal) * 100}%`);
+};
 
-  const formData = new FormData(donationForm);
-  const data = Object.fromEntries(formData.entries());
-  const sqFeet = Number.parseInt(data.sq_feet, 10);
-  const donationAmount = sqFeet * costPerSqFt;
+let progressData = {};
+if (testProgressInput) {
+  testProgressInput.addEventListener("input", function () {
+    const progressValue = Number.parseInt(testProgressInput.value, 10) || 0;
+    updateProgressOnPage({
+      raised: progressValue * 100,
+      goal: progressData.data.attributes.goal_cents,
+    });
+  });
+}
 
-  console.log(`Donation Amount: $${donationAmount.toFixed(2)}`);
-  return false;
+window.addEventListener("DOMContentLoaded", async () => {
+  progressData = await getProgress();
+  updateProgressOnPage({
+    goal: progressData.data.attributes.goal_cents,
+    raised:
+      progressData.data.attributes.received_total_from_pledges_cents +
+      progressData.data.attributes.received_total_outside_of_pledges_cents,
+  });
 });
 
