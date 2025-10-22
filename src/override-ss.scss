@@ -10,3 +10,8 @@
   margin: 0px;
   padding: 0px;
 }
+h1:not(.entry-title):not(.page-title):not(.project-intro-title):not(
+    .BlogItem-title
+  ):not(.ProductList-title):not(.ProductItem-details-title) {
+  color: #fff;
+}
