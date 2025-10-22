@@ -1,5 +1,6 @@
 import { getProgress } from "./api/getProgress";
 import "./style.scss";
+import "./override-ss.scss";
 
 // Currency formatter using browser API
 const currencyFormatter = new Intl.NumberFormat("en-US", {
