@@ -14,4 +14,10 @@ h1:not(.entry-title):not(.page-title):not(.project-intro-title):not(
     .BlogItem-title
   ):not(.ProductList-title):not(.ProductItem-details-title) {
   color: #fff;
+  font-weight: var(--pico-font-weight) !important;
+  font-size: var(--pico-font-size) !important;
+  line-height: var(--pico-line-height) !important;
+  font-family: var(--pico-font-family) !important;
+  font-size: 100px !important;
 }
+
