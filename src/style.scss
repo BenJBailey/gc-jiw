@@ -18,6 +18,9 @@
 
 .jiw-donate-action {
   text-align: center;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 #tracking-container {

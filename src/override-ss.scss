@@ -25,3 +25,8 @@ h1:not(.entry-title):not(.page-title):not(.project-intro-title):not(
   display: none !important;
 }
 
+@media only screen and (max-width: 640px) {
+  .sqs-layout .sqs-row .sqs-block:first-child {
+    padding-top: 0 !important;
+  }
+}
