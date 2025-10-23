@@ -12,7 +12,7 @@
 }
 #jiw-video {
   text-align: center;
-  margin: 1rem;
+  margin: 1rem 0 1rem 1rem;
   width: 75%;
   height: 50%;
   padding: 0;
@@ -29,10 +29,13 @@
       text-align: left;
       font-size: 0.8rem;
       margin: 1rem 0;
+      color: var(--pico-color) !important;
     }
   }
   @media (max-width: "900px") {
     width: calc(100% - 2rem);
+
+    margin: 1rem;
     .jiw-donate-action {
       margin-bottom: 0;
     }
@@ -160,5 +163,9 @@
       padding-top: 50px !important;
     }
   }
+}
+
+.unsplash-credit {
+  margin: 0 1rem;
 }
 
