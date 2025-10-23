@@ -16,8 +16,9 @@
   }
 }
 
-.jiw-donate-action {
+a.jiw-donate-action {
   text-align: center;
+  text-decoration: none !important;
   &:hover {
     text-decoration: none !important;
   }
