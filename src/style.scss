@@ -68,6 +68,7 @@
   .progress-line {
     width: 100%;
     border-top: solid 1px #575757;
+    padding: 0.2rem;
   }
   .progress-100 {
     position: absolute;
@@ -127,7 +128,7 @@
 @media (max-width: 725px) {
   .jiw-header {
     h1 {
-      padding-top: 50px;
+      padding-top: 50px !important;
     }
   }
 }
