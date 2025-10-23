@@ -101,10 +101,11 @@
   background-size: cover;
   position: relative;
   h1 {
-    color: white;
-    padding-top: 100px;
+    color: white !important;
+    padding-top: 100px !important;
     font-size: 100px;
     text-shadow: 2px 2px 4px #575757;
+    font-size: 100px !important;
   }
   img {
     min-width: 0;
