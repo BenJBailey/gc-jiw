@@ -9,6 +9,7 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 });
 
 const progressBox = document.getElementById("progress-completed");
+const progressBar = document.getElementById("progress-bar");
 const testProgressInput = document.getElementById("test-progress");
 
 const updateProgressOnPage = ({ goal, raised }) => {
@@ -20,7 +21,7 @@ const updateProgressOnPage = ({ goal, raised }) => {
   if (trackingGoal) {
     trackingGoal.innerText = currencyFormatter.format(goal / 100);
   }
-  progressBox.style.setProperty("height", `${(raised / goal) * 100}%`);
+  progressBar.value = (raised / goal) * 100;
 };
 
 let progressData = {};

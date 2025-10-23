@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <input id="test-progress" />
   <div class="jiw-header">
     <h1>Jesus Is Worthy</h1>
     <img src="/images/gc-logo.png" alt="Grace Church Logo" />
@@ -20,14 +21,9 @@
       <div id="tracking-goal">
         <h2><span id="tracking-progress">$500,000</span></h2>
         <h3>of <span id="tracking-total">$5,000,000</span> goal</h3>
+        <progress id="progress-bar" value="0" max="100" />
       </div>
-      <div id="progress">
-        <div class="progress-line progress-100">$5,000,000 </div>
-        <div class="progress-line progress-40">$2,000,00</div>
-        <div class="progress-line progress-10"></div>
 
-        <div id="progress-completed"></div>
-      </div>
     </div>
 
     <div id="jiw-video">
