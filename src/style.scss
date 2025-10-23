@@ -16,11 +16,13 @@
   }
 }
 
-a.jiw-donate-action {
-  text-align: center;
-  text-decoration: none !important;
-  &:hover {
+.jiw-donate-action {
+  a {
+    text-align: center;
     text-decoration: none !important;
+    &:hover {
+      text-decoration: none !important;
+    }
   }
 }
 
