@@ -22,11 +22,26 @@
       <div class="jiw-donate-action">
         <p>Please pray with us for the Lord to provide for Grace Church to purchase ministry space in VECA ($2M) en
           route to our long-term vision to build a gospel lighthouse in Uptown, Memphis ($5M).</p>
-        <a role="button"
-          href="https://gcmemphis.churchcenter.com/giving/to/jesus-is-worthy?open-in-church-center-modal=true"
-          class="jiw-donate-button">Give Now</a>
-        <p>You can give online with a credit card or ACH. <br />If you'd prefer to send us a check, you can mail it to:
-          541 North 6th St. Memphis, TN 38105.
+
+        <div>
+          <form id="giving-form">
+            <fieldset>
+              <label>Giving Amount</label>
+              <div class="giving-amounts jiw-toggle">
+                <button value="10" class="selected-amount" type="button">$10</button><button value="50"
+                  type="button">$50</button><button value="100" type="button">$100</button><button value="other"
+                  type="button">Other</button><input class="other-amount" disabled="disabled" name="other-amount"
+                  type="number" />
+              </div>
+
+              <input type="hidden" class="giving-selection" name="giving-selection" />
+            </fieldset>
+            <a id="give-button" role="button"
+              href="https://gcmemphis.churchcenter.com/giving/to/jesus-is-worthy?open-in-church-center-modal=true"
+              class="jiw-donate-button">Give $10</a>
+          </form>
+        </div>
+        <p>Checks can be mailed to: 'Jesus is Worthy' c/o Grace Church. 541 6th, Memphis, TN, 38105
         </p>
       </div>
     </div>
