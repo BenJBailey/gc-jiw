@@ -7,7 +7,16 @@ document.documentElement.setAttribute("data-theme", "light");
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
 });
+
+const formatCurrency = (amount) => {
+  if (amount >= 1000000) {
+    return `$${Math.round(amount / 1000000)}M`;
+  }
+  return currencyFormatter.format(Math.round(amount));
+};
 
 const progressBox = document.getElementById("progress-completed");
 const testProgressInput = document.getElementById("test-progress");
@@ -54,10 +63,10 @@ const updateProgressOnPage = ({ goal, raised }) => {
   const trackingTotal = document.getElementById("tracking-progress");
   const trackingGoal = document.getElementById("tracking-total");
   if (trackingTotal) {
-    trackingTotal.innerText = currencyFormatter.format(raised / 100);
+    trackingTotal.innerText = formatCurrency(raised / 100);
   }
   if (trackingGoal) {
-    trackingGoal.innerText = currencyFormatter.format(goal / 100);
+    trackingGoal.innerText = formatCurrency(goal / 100);
   }
   progressBox.style.setProperty("height", `${(raised / goal) * 100}%`);
 };
