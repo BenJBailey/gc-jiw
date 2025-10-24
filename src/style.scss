@@ -157,10 +157,22 @@
 }
 
 /* screens smaller than full width of the text at 725px */
-@media (max-width: 725px) {
+@media (max-width: 760px) {
   .jiw-header {
-    h1 {
+    h1:not(.entry-title):not(.page-title):not(.project-intro-title):not(
+        .BlogItem-title
+      ):not(.ProductList-title):not(.ProductItem-details-title) {
       padding-top: 50px !important;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .jiw-header {
+    h1:not(.entry-title):not(.page-title):not(.project-intro-title):not(
+        .BlogItem-title
+      ):not(.ProductList-title):not(.ProductItem-details-title) {
+      font-size: 70px !important;
     }
   }
 }
