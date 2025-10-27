@@ -24,6 +24,7 @@ const givingAmountButtons = document.querySelectorAll(".giving-amounts button");
 const givingSelection = document.querySelector(".giving-selection");
 const otherAmount = document.querySelector(".other-amount");
 const submitButton = document.querySelector("#giving-form #give-button");
+
 const updateGivingURL = () => {
   const amount = givingSelection.value;
   const existingURL = new URL(submitButton.getAttribute("href"));

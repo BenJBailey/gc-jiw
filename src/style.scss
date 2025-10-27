@@ -105,7 +105,6 @@
     margin-top: 0;
   }
   @media (max-width: 550px) {
-    flex-direction: column;
     padding: 2rem 2rem;
   }
   #tracking-goal {
@@ -134,8 +133,6 @@
   margin-left: 1rem;
   position: relative;
   @media (max-width: 550px) {
-    margin-left: 0;
-    width: 100%;
   }
 
   @media (max-width: 900px) {
