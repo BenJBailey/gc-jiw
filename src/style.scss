@@ -10,6 +10,9 @@
     flex-flow: column;
   }
 }
+.sqs-announcement-bar {
+  display: none !important;
+}
 #giving-form {
   fieldset {
     margin-bottom: 0;
