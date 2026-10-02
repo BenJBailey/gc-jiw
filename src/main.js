@@ -13,10 +13,13 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 
 const formatCurrency = (amount) => {
   if (amount >= 1000000) {
-    return `$${Math.round(amount / 1000000)}M`;
+    return `$${Number((amount / 1000000).toFixed(1))}M`;
   }
   return currencyFormatter.format(Math.round(amount));
 };
+
+// Static amount (in dollars) added to the API's raised total
+const STATIC_RAISED_OFFSET = 486325.48;
 
 const progressBox = document.getElementById("progress-completed");
 const testProgressInput = document.getElementById("test-progress");
@@ -89,7 +92,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     goal: progressData.data.attributes.goal_cents,
     raised:
       progressData.data.attributes.received_total_from_pledges_cents +
-      progressData.data.attributes.received_total_outside_of_pledges_cents,
+      progressData.data.attributes.received_total_outside_of_pledges_cents +
+      STATIC_RAISED_OFFSET * 100,
   });
 });
 
